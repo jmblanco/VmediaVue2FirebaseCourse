@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS | List Render</title>
+</head>
+
+<body>
+    <main>
+        <!-- Iterate array of element -->
+        <ul>
+            <li v-for="day in workingDays">{{ day }}</li>
+        </ul>
+        <br>
+        <!-- Iterate array of objects with the index -->
+        <ul>
+            <li v-for="(task, index) in tasks">{{ index }} - {{ task.name }} (<small>{{ task.priority }}</small>)</li>
+        </ul>
+        <br>
+        <!-- Iterate an object with the fields -->
+        <ul>
+            <li v-for="(field, key, index) in person">{{ field }} - {{ key }} - {{ index }}</li>
+        </ul>
+        <hr>
+        <pre>{{ $data }}</pre>
+    </main>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src='./js/main.js'></script>
+</body>
+
+</html>

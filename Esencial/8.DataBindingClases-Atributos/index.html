@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS | Binding Classes and Attributes</title>
+
+    <style>
+        li {
+            cursor: pointer;
+        }
+
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Tasks</h1>
+        <ul>
+            <li v-for="(task,index) in tasks" @click="completeTask(task)" :class="{completed: task.completed}">{{ task.title }}</li>
+        </ul>
+        <hr>
+        <h2>Completed Tasks: {{ completedTasks }}</h2>
+        <hr size="10" style="background-color:black">
+        <pre>{{ $data }}</pre>
+    </main>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src='./js/main.js'></script>
+</body>
+
+</html>

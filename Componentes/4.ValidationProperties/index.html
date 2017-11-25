@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS | Components | Validation Properties</title>
+</head>
+
+<body>
+    <main>
+        <candidate v-for="candidate in candidates"
+            :name="candidate.name.first"
+            :email="candidate.email"
+            :image="candidate.picture.thumbnail"
+            :location="candidate.location">
+        </candidate>
+        <hr size="10" style="background-color:black">
+        <pre>{{ $data }}</pre>
+    </main>
+    <template id="template-candidate">
+        <blockquote>
+            <img :src="image" align="right"/>
+            <h1>{{ name }}</h1>
+            <h2>{{ email }}</h2>
+            <ul>
+                <li v-for="(value, key, index) in location">{{ value }}</li>
+            </ul>
+            <hr>
+        </blockquote>
+    </template>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src='./js/main.js'></script>
+</body>
+
+</html>

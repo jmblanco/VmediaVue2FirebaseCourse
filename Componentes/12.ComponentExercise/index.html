@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Vue JS | Components</title>
+</head>
+
+<body>
+    <main>
+        <users><h1>Startups Users:</h1></users>
+    </main>
+
+    <template id="users-template">
+        <div>
+            <section class="header">
+                <slot> 
+                </slot>
+                <input type="search" placeholder="Filter Users..." v-model="usersFilter">
+            </section>
+            <hr>
+            <section class="users">
+                <user v-for="user in filteredUsers" :user="user"></user>
+            </section>
+        </div>
+    </template>
+    <template id="user-template">
+        <div class="user">
+            <img v-show="user" align="left" :src="user.photo" :alt="user.fullName">
+            <section>
+                <h1>{{ user.fullName }}</h1>
+                <small>{{ user.email }}</small>
+            </section> 
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src='./js/main.js'></script>
+</body>
+
+</html>

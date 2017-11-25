@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS | Computed Properties</title>
+</head>
+
+<body>
+    <main>
+        <h1>{{ message.split('').reverse().join('') }}</h1>
+
+        <!-- Computed property -->
+        <h1>{{ reverseMessage }}</h1>
+        <ul>
+            <li v-if="task.priority" v-for="task in tasks">{{ task.title }}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="task in tasksWithPriority">{{ task.title }}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="task in tasksByLiveTime">{{ task.title }}</li>
+        </ul>
+
+        
+        <hr>
+        <form v-on:submit.prevent="addTask">
+            <input type="text" placeholder="Insert a new task" v-model="newTask">
+            <input type="submit" value="Add Task">
+        </form>
+
+        <br>
+        <hr size="10" style="background-color:black">
+        <pre>{{ $data }}</pre>
+    </main>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src='./js/main.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS | Events</title>
+</head>
+
+<body>
+    <main>
+        <ul>
+            <li v-for="task in tasks">{{ task }}</li>
+        </ul>
+        <hr>
+        <input type="text" placeholder="Insert a new task" v-model="newTask">
+        <!--<input type="button" value="Add Task" onclick="addTask()">-->
+        <input type="button" value="Add Task" v-on:click="addTask">
+        <hr>
+        <form v-on:submit.prevent="addTask">
+            <input type="text" placeholder="Insert a new task" v-model="newTask">
+            <input type="submit" value="Add Task">
+        </form>
+        <hr>
+        <hr size="10" style="background-color:black">
+        <pre>{{ $data }}</pre>
+    </main>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src='./js/main.js'></script>
+</body>
+
+</html>

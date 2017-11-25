@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS | Components | Template</title>
+</head>
+
+<body>
+    <main>
+        <choose-winner :list="persons"></choose-winner>
+        <hr size="10" style="background-color:black">
+        <pre>{{ $data }}</pre>
+    </main>
+
+    <!-- Con tag template -->
+    <!-- Tambien se puede hacer con tag script type="text/template"-->
+    <!-- Se puede hacer tambien como inline template direactamente en la etiqueta del componente -->
+    <template id="chooseWinnerTemplate">
+        <div>
+            <h1 v-if="winner">The winner is: {{ winner }}</h1>
+            <template v-else>
+                <p>Persons:</p>
+                <ul>
+                    <li v-for="person in list">{{ person }}</li>
+                </ul>
+            </template>
+            <button @click="chooseWinner">Choose Winner!!!</button>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src='./js/main.js'></script>
+</body>
+
+</html>
